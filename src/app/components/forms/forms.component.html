@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <label for="disabledSelect" class="form-label">Pais:</label>
+  <select class="form-select" aria-label="Default select example" [(ngModel)]="selectCountry.id"
+    (change)="onSelect($any($event.target).value)" [ngModelOptions]="{standalone: true}">
+
+    <option *ngFor="let country of countries" value={{country.id}}>
+      {{country.name}}
+
+    </option>
+
+  </select>
+</div>
+<div class="mb-3"  *ngIf="cities!.length >0">
+  <label for="disabledSelect" class="form-label">Ciudad:</label>
+  <select class="form-select" aria-label="Default select example">
+    <option *ngFor="let city of cities" value={{city.id}}>
+      {{city.name}}
+
+    </option>
+
+  </select>
+</div>
